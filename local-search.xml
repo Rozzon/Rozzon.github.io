@@ -8,9 +8,15 @@
     <link href="/2023/01/11/verilog%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
     <url>/2023/01/11/verilog%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<ol><li>Modules<br>Verilog modules, like functions in other programming languages, are pieces of code that can be used and reused within a single program.</li></ol>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>verilog</tag>
+      
+    </tags>
     
   </entry>
   
