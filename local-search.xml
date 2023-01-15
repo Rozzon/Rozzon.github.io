@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>用LaTex写简历</title>
+    <link href="/2023/01/16/%E7%94%A8LaTex%E5%86%99%E7%AE%80%E5%8E%86/"/>
+    <url>/2023/01/16/%E7%94%A8LaTex%E5%86%99%E7%AE%80%E5%8E%86/</url>
+    
+    <content type="html"><![CDATA[<h2 id="用LaTex写resume-从此告别简历排版焦虑"><a href="#用LaTex写resume-从此告别简历排版焦虑" class="headerlink" title="用LaTex写resume, 从此告别简历排版焦虑"></a>用LaTex写resume, 从此告别简历排版焦虑</h2><h3 id="为什么用LaTex写简历？"><a href="#为什么用LaTex写简历？" class="headerlink" title="为什么用LaTex写简历？"></a>为什么用LaTex写简历？</h3><ol><li>Word排版太麻烦</li><li>wps自动生成简历功能要付费</li><li>boss直聘生成的简历格式有可能不符合面试官要求</li><li>只想关注内容，排版的工作交给工具</li></ol><h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>texlive + TeXstudio</p><ol><li>安装texlive<br><code>sudo dnf install texlive-scheme-full</code></li><li>安装TeXstudio<br><code>sudo dnf install texstudio</code></li></ol>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>LaTex, Resume</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Fedora QT Creator环境搭建</title>
     <link href="/2023/01/16/Fedora-QT-Creator%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <url>/2023/01/16/Fedora-QT-Creator%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
