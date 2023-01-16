@@ -16,15 +16,15 @@
   <meta name="author" content="Rozzon Li">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Fedora 搭建QT开发环境qt-creator 选择需要版本下载，这里以5.14.2的版本为例qt下载地址 安装   赋予执行权限chmod +x qt-opensource-linux-x64-5.14.2.run 然后执行.&#x2F;qt-opensource-linux-x64-5.14.2.run注意 Select Components要选择Select All   加入环境变量用vim打开环">
+    <meta name="description" content="Fedora 搭建QT开发环境qt-creator 选择需要版本下载，这里以5.14.2的版本为例qt下载地址 安装   赋予执行权限1chmod +x qt-opensource-linux-x64-5.14.2.run 然后执行1.&#x2F;qt-opensource-linux-x64-5.14.2.run 注意 Select Components要选择Select All   加入环境变量用vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Fedora QT Creator环境搭建">
 <meta property="og:url" content="http://example.com/2023/01/16/Fedora-QT-Creator%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Fedora 搭建QT开发环境qt-creator 选择需要版本下载，这里以5.14.2的版本为例qt下载地址 安装   赋予执行权限chmod +x qt-opensource-linux-x64-5.14.2.run 然后执行.&#x2F;qt-opensource-linux-x64-5.14.2.run注意 Select Components要选择Select All   加入环境变量用vim打开环">
+<meta property="og:description" content="Fedora 搭建QT开发环境qt-creator 选择需要版本下载，这里以5.14.2的版本为例qt下载地址 安装   赋予执行权限1chmod +x qt-opensource-linux-x64-5.14.2.run 然后执行1.&#x2F;qt-opensource-linux-x64-5.14.2.run 注意 Select Components要选择Select All   加入环境变量用vim">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-15T16:06:19.000Z">
-<meta property="article:modified_time" content="2023-01-16T14:38:22.178Z">
+<meta property="article:modified_time" content="2023-01-16T14:40:58.867Z">
 <meta property="article:author" content="Rozzon Li">
 <meta property="article:tag" content="QT">
 <meta name="twitter:card" content="summary_large_image">
@@ -235,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          461 字
+          463 字
         
       </span>
     
@@ -302,8 +302,9 @@
 <li>安装</li>
 </ul>
 <ol>
-<li>赋予执行权限<br><code>chmod +x qt-opensource-linux-x64-5.14.2.run</code></li>
-<li>然后执行<br><code>./qt-opensource-linux-x64-5.14.2.run</code><br><strong>注意</strong> Select Components要选择Select All</li>
+<li>赋予执行权限<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs [bash]">chmod +x qt-opensource-linux-x64-5.14.2.run<br></code></pre></td></tr></table></figure></li>
+<li>然后执行<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs [bash]">./qt-opensource-linux-x64-5.14.2.run<br></code></pre></td></tr></table></figure>
+<strong>注意</strong> Select Components要选择Select All</li>
 </ol>
 <ul>
 <li>加入环境变量<br>用vim打开环境变量设置文件<br><code>sudo vim /etc/profile</code><br>在profile文件末尾添加以下代码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs [bash]">export PATH=&quot;/opt/Qt5.14.2/Tools/QtCreator/bin:$PATH&quot;<br>export PATH=&quot;/opt/Qt5.14.2/5.14.2/gcc_64/bin:$PATH&quot;<br></code></pre></td></tr></table></figure></li>
