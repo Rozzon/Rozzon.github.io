@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="引言：  介绍STM32F429IDISCOVERY开发板，概述其硬件特性和用途。 引言中可以提及你的动机，即为什么选择这个主题，以及你期望读者从你的Blog中学到什么。   硬件描述：  详细介绍STM32F429IDISCOVERY开发板的硬件架构，包括处理器类型、内存配置、外设等。 可以附上一些板上外设的功能说明，比如LED、按键、传感器等。   FreeRTOS简介：  简要介绍Free">
+    <meta name="description" content="1.引言 介绍STM32F429IDISCOVERY开发板，概述其硬件特性和用途。 引言中可以提及你的动机，即为什么选择这个主题，以及你期望读者从你的Blog中学到什么。  2.硬件描述 详细介绍STM32F429IDISCOVERY开发板的硬件架构，包括处理器类型、内存配置、外设等。 可以附上一些板上外设的功能说明，比如LED、按键、传感器等。  3.FreeRTOS简介 简要介绍FreeRTO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入嵌入式世界：STM32F429IDISCOVERY与FreeRTOS探秘">
 <meta property="og:url" content="http://example.com/2023/12/22/%E6%B7%B1%E5%85%A5%E5%B5%8C%E5%85%A5%E5%BC%8F%E4%B8%96%E7%95%8C%EF%BC%9ASTM32F429IDISCOVERY%E4%B8%8EFreeRTOS%E6%8E%A2%E7%A7%98/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="引言：  介绍STM32F429IDISCOVERY开发板，概述其硬件特性和用途。 引言中可以提及你的动机，即为什么选择这个主题，以及你期望读者从你的Blog中学到什么。   硬件描述：  详细介绍STM32F429IDISCOVERY开发板的硬件架构，包括处理器类型、内存配置、外设等。 可以附上一些板上外设的功能说明，比如LED、按键、传感器等。   FreeRTOS简介：  简要介绍Free">
+<meta property="og:description" content="1.引言 介绍STM32F429IDISCOVERY开发板，概述其硬件特性和用途。 引言中可以提及你的动机，即为什么选择这个主题，以及你期望读者从你的Blog中学到什么。  2.硬件描述 详细介绍STM32F429IDISCOVERY开发板的硬件架构，包括处理器类型、内存配置、外设等。 可以附上一些板上外设的功能说明，比如LED、按键、传感器等。  3.FreeRTOS简介 简要介绍FreeRTO">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-12-22T09:58:53.000Z">
-<meta property="article:modified_time" content="2023-12-22T10:01:10.555Z">
+<meta property="article:modified_time" content="2023-12-22T10:06:49.243Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
     
@@ -111,6 +111,10 @@
     </div>
     
     
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">1.引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%A1%AC%E4%BB%B6%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">2.硬件描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-FreeRTOS%E7%AE%80%E4%BB%8B"><span class="toc-number">3.</span> <span class="toc-text">3.FreeRTOS简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91"><span class="toc-number">4.</span> <span class="toc-text">4.软件开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">5.</span> <span class="toc-text">5.开发环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">6.</span> <span class="toc-text">6. 实验过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">7.总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E9%99%84%E5%BD%95"><span class="toc-number">8.</span> <span class="toc-text">8.附录</span></a></li></ol>
+      </div>
+    
   </span>
 </div>
 
@@ -148,55 +152,37 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <ol>
-<li><p><strong>引言：</strong></p>
-<ul>
+    <h2 id="1-引言"><a href="#1-引言" class="headerlink" title="1.引言"></a>1.引言</h2><ul>
 <li>介绍STM32F429IDISCOVERY开发板，概述其硬件特性和用途。</li>
 <li>引言中可以提及你的动机，即为什么选择这个主题，以及你期望读者从你的Blog中学到什么。</li>
 </ul>
-</li>
-<li><p><strong>硬件描述：</strong></p>
-<ul>
+<h2 id="2-硬件描述"><a href="#2-硬件描述" class="headerlink" title="2.硬件描述"></a>2.硬件描述</h2><ul>
 <li>详细介绍STM32F429IDISCOVERY开发板的硬件架构，包括处理器类型、内存配置、外设等。</li>
 <li>可以附上一些板上外设的功能说明，比如LED、按键、传感器等。</li>
 </ul>
-</li>
-<li><p><strong>FreeRTOS简介：</strong></p>
-<ul>
+<h2 id="3-FreeRTOS简介"><a href="#3-FreeRTOS简介" class="headerlink" title="3.FreeRTOS简介"></a>3.FreeRTOS简介</h2><ul>
 <li>简要介绍FreeRTOS操作系统，包括其特点、优势和适用场景。</li>
 <li>强调为什么选择FreeRTOS作为你的RTOS，以及它在嵌入式系统中的应用。</li>
 </ul>
-</li>
-<li><p><strong>软件开发：</strong></p>
-<ul>
+<h2 id="4-软件开发"><a href="#4-软件开发" class="headerlink" title="4.软件开发"></a>4.软件开发</h2><ul>
 <li>详细描述FreeRTOS的集成过程，包括环境搭建、工程配置等。</li>
 <li>可以展示一些基本的FreeRTOS API的使用，如任务创建、任务间通信等。</li>
 </ul>
-</li>
-<li><p><strong>开发环境搭建：</strong></p>
-<ul>
+<h2 id="5-开发环境搭建"><a href="#5-开发环境搭建" class="headerlink" title="5.开发环境搭建"></a>5.开发环境搭建</h2><ul>
 <li>详细说明你使用的开发工具，编译器、调试器等。</li>
 <li>提供配置开发环境的步骤，以帮助读者在他们自己的系统上重现你的实验。</li>
 </ul>
-</li>
-<li><p><strong>实验过程：</strong></p>
-<ul>
+<h2 id="6-实验过程"><a href="#6-实验过程" class="headerlink" title="6. 实验过程"></a>6. 实验过程</h2><ul>
 <li>描述你进行的具体实验，包括使用FreeRTOS解决的问题或者实现的功能。</li>
 <li>提供实验结果的截图或者数据，以便读者更好地理解你的实验。</li>
 </ul>
-</li>
-<li><p><strong>总结：</strong></p>
-<ul>
+<h2 id="7-总结"><a href="#7-总结" class="headerlink" title="7.总结"></a>7.总结</h2><ul>
 <li>总结你的探索和实验过程，强调所学到的经验和知识。</li>
 <li>鼓励读者继续深入学习和探索嵌入式系统和RTOS。</li>
 </ul>
-</li>
-<li><p><strong>附录：</strong></p>
-<ul>
+<h2 id="8-附录"><a href="#8-附录" class="headerlink" title="8.附录"></a>8.附录</h2><ul>
 <li>可以包括一些额外的资源、链接或者代码片段，以帮助读者进一步扩展他们的知识。</li>
 </ul>
-</li>
-</ol>
 <p>在整个Blog中，尽量使用清晰的语言和图表，以便读者能够轻松理解你的思路和实验过程。希望我的Blog能够对其他对STM32F429IDISCOVERY和FreeRTOS感兴趣的人有所帮助！</p>
 
   </div>
@@ -224,6 +210,10 @@
 
     
     
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%95%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">1.引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%A1%AC%E4%BB%B6%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">2.硬件描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-FreeRTOS%E7%AE%80%E4%BB%8B"><span class="toc-number">3.</span> <span class="toc-text">3.FreeRTOS简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91"><span class="toc-number">4.</span> <span class="toc-text">4.软件开发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">5.</span> <span class="toc-text">5.开发环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">6.</span> <span class="toc-text">6. 实验过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">7.总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E9%99%84%E5%BD%95"><span class="toc-number">8.</span> <span class="toc-text">8.附录</span></a></li></ol>
+      </div>
+    
 
     <div id="share-footer" style="display: none">
       <ul>
@@ -244,6 +234,8 @@
 
     <div id="actions-footer">
         <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
         
         <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
         <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
